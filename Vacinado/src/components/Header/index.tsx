@@ -2,18 +2,18 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 
-const MyApp: React.FC = () => {
+const Header: React.FC = () => {
     return (
         <View>
-            <Text style={AppStyle.textContainer}>Ola, Jonathan</Text>
+            <Text style={style.textContainer}>Ola, Jonathan</Text>
         </View>
     );
 };
-const AppStyle = StyleSheet.create({
+const style = StyleSheet.create({
     textContainer: {
         color: 'white',
         fontSize: 30,
     },
 });
 
-export default MyApp;
+export default Header;
