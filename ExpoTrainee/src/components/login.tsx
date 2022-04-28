@@ -1,20 +1,36 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { StyleSheet, Text, TextInput, View } from 'react-native';
+import styled from 'styled-components/native';
 
 const LoginArea = () => {
     return (
-        <View style={loginAreaStyle.container}>
-            <Text>Login</Text>
-        </View>
+        <>
+            <TextInput style={loginAreaStyle.userLogin} placeholder='Login'>
+            </TextInput>
+            <TextInput secureTextEntry={true} style={loginAreaStyle.passwordLogin} placeholder='Senha'>
+            </TextInput>
+
+        </>
     )
-}
+};
 
 export default LoginArea;
 
 const loginAreaStyle = StyleSheet.create({
-    container: {
-        width: 200,
-        height: 40,
-        borderColor: 'red'
+    userLogin: {
+        width: 350,
+        height: 70,
+        borderRadius: 15,
+        backgroundColor: '#FFFFFF',
+        marginTop: '20%',
+        textAlign: 'center'
+    },
+    passwordLogin: {
+        width: 350,
+        height: 70,
+        borderRadius: 15,
+        backgroundColor: '#FFFFFF',
+        marginTop: '5%',
+        textAlign: 'center'
     }
 })

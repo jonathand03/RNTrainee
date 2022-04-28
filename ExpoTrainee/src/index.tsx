@@ -1,24 +1,27 @@
+import React from 'react';
+import { Text, View, StyleSheet } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import Button from './components/Button';
 import LoginArea from './components/login'
-
-const App = () => {
+import MyButton from './components/Button';
+const Main = () => {
     return (
-        <View style={styles.container}>
-            <Text>Hello, World!</Text>
+        <View style={PageStyle.PageContainer}>
+            <LoginArea></LoginArea>
+            <MyButton></MyButton>
             <StatusBar style="auto" />
         </View>
-    );
+    )
 };
 
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        backgroundColor: '#fff',
-        alignItems: 'center',
-        justifyContent: 'center',
-    },
-});
 
-export default App;
+export default Main;
+
+const PageStyle = StyleSheet.create({
+    PageContainer: {
+        flex: 1,
+        justifyContent: 'center',
+        backgroundColor: '#68AD6B',
+        alignItems: 'center',
+        alignContent: 'center'
+    }
+});

@@ -1,25 +1,42 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-const Button = () => {
+const MyButton = () => {
+    const [user, getUser] = useState<string>("");
+    const getUserName = (name: string) => {
+        if (name.search(' ')) {
+            alert("Seu usuário não pode conter espaço");
+        }
+        else {
+            getUser(name);
+        }
+    }
     return (
-        <TouchableOpacity style={StyledButton.buttonContainer}>
-            <Text>Ok</Text>
-        </TouchableOpacity>
+        <>
+            <TouchableOpacity style={ButtonStyle.ButtonContaier}
+                onPress={() => MyButton}
+            >
+                <Text style={ButtonStyle.TextButton}>Entrar</Text>
+            </TouchableOpacity>
+        </>
     )
-}
+};
 
+export default MyButton;
 
-
-const StyledButton = StyleSheet.create({
-    buttonContainer: {
-        alignItems: 'center',
+const ButtonStyle = StyleSheet.create({
+    ButtonContaier: {
+        backgroundColor: '#758FF0',
+        borderRadius: 15,
+        width: 120,
+        height: 60,
         justifyContent: 'center',
-        // borderRadius: 15,
-        width: 400,
-        height: 30,
-        backgroundColor: '#481CE8',
+        marginTop: '10%'
+    },
+    TextButton: {
+        color: 'white',
+        fontWeight: '900',
+        fontSize: 20,
+        alignSelf: 'center'
     }
 });
-
-export default Button;
