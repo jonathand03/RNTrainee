@@ -1,10 +1,11 @@
 import React from 'react';
 import { SafeAreaView, StyleSheet, Text } from 'react-native';
+import  Header  from '../src/components/Header/index';
 
 const App : React.FC = () =>{
   return(
     <SafeAreaView style={style.App}>
-      <Text style={style.Title}>Welcome !</Text>
+      <Header></Header>
     </SafeAreaView>
   );
 };
@@ -18,9 +19,5 @@ const style = StyleSheet.create({
     backgroundColor: 'black',
     justifyContent: 'center',
     alignItems: 'center'
-  },
-  Title:{
-    color: 'white',
-    fontSize: 30,
   },
 });
